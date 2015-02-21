@@ -3,6 +3,10 @@
 
 DEB_HOST_MULTIARCH=
 
+override_dh_autoreconf:
+	mkdir -p m4
+	dh_autoreconf
+
 override_dh_auto_configure:
 	dh_auto_configure -- --with-libgal-include=/usr/include/HAL --with-libgal-lib=/usr/lib
 
