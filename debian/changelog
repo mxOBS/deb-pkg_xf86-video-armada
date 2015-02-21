@@ -1,4 +1,4 @@
-xf86-video-armada (0.0.0-1) precise; urgency=low
+xf86-video-armada (0.0.0) precise; urgency=low
 
   * Initial release
 
