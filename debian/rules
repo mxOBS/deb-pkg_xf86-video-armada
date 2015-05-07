@@ -1,14 +1,15 @@
 #!/usr/bin/make -f                                                              
 # debian/rules for the Debian xserver-xorg-driver-armada package.
 
-DEB_HOST_MULTIARCH=
+# be verbose
+export DH_VERBOSE=1
 
 override_dh_autoreconf:
 	mkdir -p m4
 	dh_autoreconf
 
 override_dh_auto_configure:
-	dh_auto_configure -- --with-libgal-include=/usr/include/HAL --with-libgal-lib=/usr/lib
+	dh_auto_configure -- --with-libgal-include=/usr/include/HAL --with-libgal-lib=/usr/lib --libdir=/usr/lib
 
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/tmp
